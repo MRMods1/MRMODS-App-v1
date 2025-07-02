@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تطبيقي PWA</title>
+
+  <!-- مانيفست التطبيق -->
+  <link rel="manifest" href="data:application/json,{
+    "name": "تطبيقي PWA",
+    "short_name": "PWA",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#2F3BA2",
+    "icons": [
+      {
+        "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAA..",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAA..",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }">
+
+  <!-- اللون الأساسي -->
+  <meta name="theme-color" content="#2F3BA2">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      color: #2F3BA2;
+    }
+  </style>
+
+</head>
+<body>
+  <h1>أهلاً بك في تطبيق PWA!</h1>
+  <p>هذا تطبيق ويب تفاعلي يمكن تثبيته على جهازك.</p>
+
+  <script>
+    // خدمة العمل (Service Worker)
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/index.html', { scope: './' })
+          .then(reg => console.log('✅ Service Worker مسجل:', reg))
+          .catch(err => console.log('❌ فشل التسجيل:', err));
+      });
+    }
+
+    // Service Worker داخل الكود
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.onmessage = function (event) {
+        console.log("من ال Service Worker:", event.data);
+      };
+
+      // تثبيت الـ Service Worker مباشرة
+      if (navigator.serviceWorker.controller) {
+        console.log("الـ Service Worker جاهز!");
+      } else {
+        console.log("التطبيق يعمل بدون خدمة عمل.");
+      }
+    }
+
+    // خدمة العمل (Service Worker) الكود
+    const swCode = `
+      self.addEventListener('install', function(event) {
+        console.log('[Service Worker] تثبيت');
+        event.waitUntil(
+          caches.open('pwa-cache').then(function(cache) {
+            return cache.addAll([
+              '/index.html',
+              '/favicon.ico',
+              '/assets/icons/icon-192.png',
+              '/assets/icons/icon-512.png'
+            ]);
+          })
+        );
+      });
+
+      self.addEventListener('activate', function(event) {
+        console.log('[Service Worker] تفعيل');
+      });
+
+      self.addEventListener('fetch', function(event) {
+        event.respondWith(
+          caches.match(event.request).then(function(response) {
+            return response || fetch(event.request);
+          })
+        );
+      });
+    `;
+
+    // إضافة Service Worker داخل الكود
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register(URL.createObjectURL(new Blob([swCode], { type: 'application/javascript' })))
+        .then(reg => console.log('✅ Service Worker مسجل بنجاح!'))
+        .catch(err => console.log('❌ فشل التسجيل:', err));
+    }
+  </script>
+</body>
+</html>
