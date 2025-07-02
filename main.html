@@ -8,7 +8,6 @@
   <!-- تعيين أيقونة الموقع (favicon) -->
   <link rel="icon" href="https://cdn4.cdn-telegram.org/file/WPXRkyFdcvM5hfu21Wa5KwzYv1FtqXW8be8_WnhrdqNHTDE2qqbKQOYUmpljZgOgdBOeA77gcOz8u7Wg5N38NY01N3x3UUNyQ3DqOSEf71qLscTEL4XTwSwkmi93w__8w3RVDrkRPdj5jOKP5_2dbNgOLL0VDIH_ZEcNLh2SRegiCeyNuw7th83OUXd_bZ1AFos_fSXKKAmwl9w4Ugf-PfrDvoCPkGixpU7tO68o5oNNPotet8I6WZ234_kBQRYtxZOqL5iVwUFLK-DEun1jwJyZCFZwvL6U6pQbvLBhL_tymJ0hlPf94gBXkaFSgiD8TUEf6v1yUmImWi0FB1xxeA.jpg" type="image/jpeg">
   
-  <!-- المانيفست -->
   <link rel="manifest" href="data:application/json,{
     "name": "MRMODS App v1",
     "short_name": "MRMODS v1",
@@ -29,13 +28,10 @@
       }
     ]
   }">
-
+  
   <meta name="theme-color" content="#2F3BA2">
 
-  <!-- الخطوط -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  
-  <!-- إضافة أيقونات FontAwesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
   <style>
@@ -107,7 +103,7 @@
       transition: all 0.3s ease;
       margin-top: 20px;
       animation: pulse 1.5s infinite;
-      text-decoration: none; /* إزالة الخط أسفل الرابط */
+      text-decoration: none;
     }
 
     @keyframes pulse {
@@ -148,6 +144,45 @@
     }
 
     .purple-btn:active {
+      transform: scale(0.95);
+    }
+
+    .textarea-container {
+      margin-top: 20px;
+      text-align: left;
+    }
+
+    textarea {
+      width: 100%;
+      height: 150px;
+      font-size: 16px;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      background-color: #f4f4f4;
+      color: #333;
+      resize: vertical;
+    }
+
+    .download-btn {
+      display: inline-block;
+      background-color: #FF6A00;
+      color: white;
+      font-size: 18px;
+      padding: 14px 30px;
+      border-radius: 30px;
+      border: none;
+      text-decoration: none;
+      margin-top: 20px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .download-btn:hover {
+      background-color: #FF4500;
+      transform: translateY(-3px);
+    }
+
+    .download-btn:active {
       transform: scale(0.95);
     }
 
@@ -194,6 +229,16 @@
 <body>
   <div class="container">
     <div class="app-title">MRMODS App</div>
+    <!-- مساحة لكتابة سكربت -->
+    <div class="textarea-container">
+      <label for="script-input">أدخل السكربت الخاص بك:</label>
+      <textarea id="script-input" placeholder="اكتب السكربت هنا..."></textarea>
+    </div>
+    
+    <!-- زر التحميل المباشر -->
+    <a href="path-to-your-file.zip" class="download-btn" download>
+      تحميل الملف
+    </a>
   </div>
 </body>
 </html>
