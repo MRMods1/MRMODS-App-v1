@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MRMODS App v1</title>
 
-  <!-- تعيين أيقونة الموقع (favicon) -->
   <link rel="icon" href="https://cdn4.cdn-telegram.org/file/WPXRkyFdcvM5hfu21Wa5KwzYv1FtqXW8be8_WnhrdqNHTDE2qqbKQOYUmpljZgOgdBOeA77gcOz8u7Wg5N38NY01N3x3UUNyQ3DqOSEf71qLscTEL4XTwSwkmi93w__8w3RVDrkRPdj5jOKP5_2dbNgOLL0VDIH_ZEcNLh2SRegiCeyNuw7th83OUXd_bZ1AFos_fSXKKAmwl9w4Ugf-PfrDvoCPkGixpU7tO68o5oNNPotet8I6WZ234_kBQRYtxZOqL5iVwUFLK-DEun1jwJyZCFZwvL6U6pQbvLBhL_tymJ0hlPf94gBXkaFSgiD8TUEf6v1yUmImWi0FB1xxeA.jpg" type="image/jpeg">
   
   <link rel="manifest" href="data:application/json,{
@@ -17,14 +16,7 @@
     "theme_color": "#2F3BA2",
     "icons": [
       {
-        "src": "https://cdn4.cdn-telegram.org/file/WPXRkyFdcvM5hfu21Wa5KwzYv1FtqXW8be8_WnhrdqNHTDE2qqbKQOYUmpljZgOgdBOeA77gcOz8u7Wg5N38NY01N3x3UUNyQ3DqOSEf71qLscTEL4XTwSwkmi93w__8w3RVDrkRPdj5jOKP5_2dbNgOLL0VDIH_ZEcNLh2SRegiCeyNuw7th83OUXd_bZ1AFos_fSXKKAmwl9w4Ugf-PfrDvoCPkGixpU7tO68o5oNNPotet8I6WZ234_kBQRYtxZOqL5iVwUFLK-DEun1jwJyZCFZwvL6U6pQbvLBhL_tymJ0hlPf94gBXkaFSgiD8TUEf6v1yUmImWi0FB1xxeA.jpg",
-        "sizes": "192x192",
-        "type": "image/jpg"
-      },
-      {
-        "src": "https://cdn4.cdn-telegram.org/file/WPXRkyFdcvM5hfu21Wa5KwzYv1FtqXW8be8_WnhrdqNHTDE2qqbKQOYUmpljZgOgdBOeA77gcOz8u7Wg5N38NY01N3x3UUNyQ3DqOSEf71qLscTEL4XTwSwkmi93w__8w3RVDrkRPdj5jOKP5_2dbNgOLL0VDIH_ZEcNLh2SRegiCeyNuw7th83OUXd_bZ1AFos_fSXKKAmwl9w4Ugf-PfrDvoCPkGixpU7tO68o5oNNPotet8I6WZ234_kBQRYtxZOqL5iVwUFLK-DEun1jwJyZCFZwvL6U6pQbvLBhL_tymJ0hlPf94gBXkaFSgiD8TUEf6v1yUmImWi0FB1xxeA.jpg",
-        "sizes": "512x512",
-        "type": "image/jpg"
+        "src": "https://cdn4.cdn-telegram.org/file/WPXRkyFdcvM5hfu21Wa5KwzYv1FtqXW8be8_WnhrdqNHTDE2qqbKQOYUmpljZgOgdBOeA77gcOz8u7Wg5N38NY01N3x3UUNyQ3DqOSEf71qLscTEL4XTwSwkmi93w__8w3RVDrkRPdj5jOKP5_2dbNgOLL0VDIH_ZEcNLh2SRegiCeyNuw7th83OUXd_bZ1AFos_fSXKKAmwl9w4Ugf-PfrDvoCPkGixpU7tO68o5oNNPotet8I6WZ234_kBQRYtxZOqL5iVwUFLK-DEun1jwJyZCFZwvL6U6pQbvLBhL_tymJ0hlPf94gBXkaFSgiD8TUEf6v1yUmImWi0FB1xxeA.jpg" type="image/jpeg">
       }
     ]
   }">
@@ -147,7 +139,7 @@
       transform: scale(0.95);
     }
 
-    /* عرض السكربت داخل عنصر pre */
+    /* عرض السكربت داخل عنصر pre مع اللون الأسود والنص الغامق */
     .script-container {
       margin-top: 20px;
       background-color: rgba(255, 255, 255, 0.2);
@@ -157,7 +149,8 @@
       max-height: 300px;
       overflow-y: auto;
       font-family: monospace;
-      color: #ffcc00;
+      color: #000000; /* لون الخط الأسود */
+      font-weight: bold; /* جعل النص غامقًا */
     }
 
     .download-btn {
@@ -188,19 +181,19 @@
   <div class="container">
     <div class="app-title">MRMODS App</div>
 
-    <!-- عرض السكربت في مساحة ثابتة -->
+       <!-- عرض السكربت في مساحة ثابتة -->
     <div class="script-container">
       <pre id="script-display">
-        密码 / Pass: AppleP12.com
+       AppleP12.com : الباسور
 
-证书名称 / CertName:
+ اسم الشهادة:
 NREH ESTATE INFORMATION TECHNOLOGY CO.,LTD.
 
-上传时间 / UploadTime:
+ وقت صدور الشهادة:
 2025-07-01 20:55:04 GMT+08:00
 
-状态 / Status:
-🟢良好/Good
+  الحالة:
+🟢الشهادة تعمل
 
       </pre>
     </div>
