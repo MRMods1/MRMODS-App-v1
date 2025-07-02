@@ -3,31 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>تطبيق PWA مشابه لموقع Canva</title>
+  <title>MRMODS App v1</title>
 
-  <!-- مانيفست التطبيق -->
+  <!-- المانيفست -->
   <link rel="manifest" href="data:application/json,{
-    "name": "تطبيقي PWA",
-    "short_name": "PWA",
+    "name": "MRMODS App v1",
+    "short_name": "MRMODS v1",
     "start_url": "./index.html",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#2F3BA2",
     "icons": [
       {
-        "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAA..",
+        "src": "https://cdn4.cdn-telegram.org/file/WPXRkyFdcvM5hfu21Wa5KwzYv1FtqXW8be8_WnhrdqNHTDE2qqbKQOYUmpljZgOgdBOeA77gcOz8u7Wg5N38NY01N3x3UUNyQ3DqOSEf71qLscTEL4XTwSwkmi93w__8w3RVDrkRPdj5jOKP5_2dbNgOLL0VDIH_ZEcNLh2SRegiCeyNuw7th83OUXd_bZ1AFos_fSXKKAmwl9w4Ugf-PfrDvoCPkGixpU7tO68o5oNNPotet8I6WZ234_kBQRYtxZOqL5iVwUFLK-DEun1jwJyZCFZwvL6U6pQbvLBhL_tymJ0hlPf94gBXkaFSgiD8TUEf6v1yUmImWi0FB1xxeA.jpg",
         "sizes": "192x192",
-        "type": "image/png"
+        "type": "image/jpg"
       },
       {
-        "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAA..",
+        "src": "https://cdn4.cdn-telegram.org/file/WPXRkyFdcvM5hfu21Wa5KwzYv1FtqXW8be8_WnhrdqNHTDE2qqbKQOYUmpljZgOgdBOeA77gcOz8u7Wg5N38NY01N3x3UUNyQ3DqOSEf71qLscTEL4XTwSwkmi93w__8w3RVDrkRPdj5jOKP5_2dbNgOLL0VDIH_ZEcNLh2SRegiCeyNuw7th83OUXd_bZ1AFos_fSXKKAmwl9w4Ugf-PfrDvoCPkGixpU7tO68o5oNNPotet8I6WZ234_kBQRYtxZOqL5iVwUFLK-DEun1jwJyZCFZwvL6U6pQbvLBhL_tymJ0hlPf94gBXkaFSgiD8TUEf6v1yUmImWi0FB1xxeA.jpg",
         "sizes": "512x512",
-        "type": "image/png"
+        "type": "image/jpg"
       }
     ]
   }">
 
-  <!-- اللون الأساسي -->
   <meta name="theme-color" content="#2F3BA2">
 
   <!-- الخطوط -->
@@ -45,7 +44,7 @@
       height: 100vh;
       color: #333;
     }
-    
+
     .container {
       text-align: center;
       background-color: #FFFFFF;
@@ -88,20 +87,27 @@
       border-radius: 8px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
+
+    .announcement {
+      font-size: 18px;
+      color: #FF6A00;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
   </style>
-
 </head>
-<body>
 
+<body>
   <div class="container">
-    <h1>مرحباً بك في تطبيق PWA</h1>
+    <!-- إعلان أعلى العنوان -->
+    <div class="announcement">قريباً تطبيق شهادات مجانية للآيفون</div>
+    <h1>MRMODS App v1</h1>
     <p>نحن سعداء بتقديم تجربة تفاعلية رائعة لك!</p>
     <a href="#" class="cta-btn">ابدأ الآن</a>
     <img src="https://via.placeholder.com/400" alt="صورة ترويجية" class="image">
   </div>
 
   <script>
-    // خدمة العمل (Service Worker)
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('/index.html', { scope: './' })
@@ -110,7 +116,6 @@
       });
     }
 
-    // Service Worker داخل الكود
     const swCode = `
       self.addEventListener('install', function(event) {
         console.log('[Service Worker] تثبيت');
@@ -139,7 +144,6 @@
       });
     `;
 
-    // إضافة Service Worker داخل الكود
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register(URL.createObjectURL(new Blob([swCode], { type: 'application/javascript' })))
         .then(reg => console.log('✅ Service Worker مسجل بنجاح!'))
