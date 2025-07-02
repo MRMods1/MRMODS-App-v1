@@ -147,31 +147,6 @@
       overflow: hidden;
     }
 
-    .purple-btn::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 300%;
-      height: 300%;
-      background: rgba(255, 255, 255, 0.15);
-      border-radius: 50%;
-      transform: translate(-50%, -50%) scale(0);
-      animation: liquidEffect 1s infinite;
-    }
-
-    @keyframes liquidEffect {
-      0% {
-        transform: translate(-50%, -50%) scale(0);
-      }
-      50% {
-        transform: translate(-50%, -50%) scale(1.2);
-      }
-      100% {
-        transform: translate(-50%, -50%) scale(0);
-      }
-    }
-
     .purple-btn:hover {
       background: rgba(255, 255, 255, 0.2);  /* عند التمرير يتم زيادة الشفافية */
       border-color: rgba(255, 255, 255, 0.6); /* زيادة الشفافية عند التمرير */
