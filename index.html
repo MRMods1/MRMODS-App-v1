@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>تطبيقي PWA</title>
+  <title>تطبيق PWA مشابه لموقع Canva</title>
 
   <!-- مانيفست التطبيق -->
   <link rel="manifest" href="data:application/json,{
@@ -30,21 +30,75 @@
   <!-- اللون الأساسي -->
   <meta name="theme-color" content="#2F3BA2">
 
+  <!-- الخطوط -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
     body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 20px;
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #F4F7FF;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #333;
     }
+    
+    .container {
+      text-align: center;
+      background-color: #FFFFFF;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      width: 100%;
+    }
+
     h1 {
+      font-size: 32px;
       color: #2F3BA2;
+    }
+
+    p {
+      font-size: 18px;
+      color: #555;
+    }
+
+    .cta-btn {
+      margin-top: 20px;
+      padding: 10px 25px;
+      background-color: #2F3BA2;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-btn:hover {
+      background-color: #1c2a6b;
+    }
+
+    .image {
+      margin-top: 20px;
+      width: 100%;
+      max-width: 400px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
   </style>
 
 </head>
 <body>
-  <h1>أهلاً بك في تطبيق PWA!</h1>
-  <p>هذا تطبيق ويب تفاعلي يمكن تثبيته على جهازك.</p>
+
+  <div class="container">
+    <h1>مرحباً بك في تطبيق PWA</h1>
+    <p>نحن سعداء بتقديم تجربة تفاعلية رائعة لك!</p>
+    <a href="#" class="cta-btn">ابدأ الآن</a>
+    <img src="https://via.placeholder.com/400" alt="صورة ترويجية" class="image">
+  </div>
 
   <script>
     // خدمة العمل (Service Worker)
@@ -57,20 +111,6 @@
     }
 
     // Service Worker داخل الكود
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.onmessage = function (event) {
-        console.log("من ال Service Worker:", event.data);
-      };
-
-      // تثبيت الـ Service Worker مباشرة
-      if (navigator.serviceWorker.controller) {
-        console.log("الـ Service Worker جاهز!");
-      } else {
-        console.log("التطبيق يعمل بدون خدمة عمل.");
-      }
-    }
-
-    // خدمة العمل (Service Worker) الكود
     const swCode = `
       self.addEventListener('install', function(event) {
         console.log('[Service Worker] تثبيت');
@@ -106,5 +146,6 @@
         .catch(err => console.log('❌ فشل التسجيل:', err));
     }
   </script>
+
 </body>
 </html>
