@@ -43,29 +43,18 @@
       font-family: 'Roboto', sans-serif;
       margin: 0;
       padding: 0;
-      background: #000000; /* خلفية سوداء */
+      background: url('https://i.pinimg.com/736x/c2/47/b6/c247b634a03534a0f035458cb3a1d34e.jpg') no-repeat center center fixed; /* إضافة صورة الخلفية */
+      background-size: cover; /* تكبير الصورة لتغطية كامل الخلفية */
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
       color: white; /* نص أبيض */
-      opacity: 0;
-      animation: fadeIn 2s forwards;
-    }
-
-    /* تأثير التلاشي للنص عند التحميل */
-    @keyframes fadeIn {
-      0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
     }
 
     .container {
       text-align: center;
-      background-color: #222222; /* خلفية داخلية داكنة */
+      background-color: rgba(34, 34, 34, 0.7); /* خلفية داكنة شفافة للداخلية */
       padding: 40px;
       border-radius: 12px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
@@ -75,9 +64,7 @@
 
     h1 {
       font-size: 36px;
-      color: white; /* نص أبيض */
-      opacity: 0;
-      animation: fadeIn 2s forwards 0.5s;
+      color: white;
     }
 
     .announcement {
@@ -85,8 +72,6 @@
       color: #FF6A00;
       font-weight: bold;
       margin-bottom: 20px;
-      opacity: 0;
-      animation: fadeIn 2s forwards 1s;
     }
 
     .app-title {
@@ -94,8 +79,6 @@
       color: white;
       font-weight: bold;
       margin-bottom: 20px;
-      opacity: 0;
-      animation: fadeIn 2s forwards 1.5s;
     }
 
     /* إضافة إطار زر حول الأيقونة والنص */
@@ -111,8 +94,6 @@
       border: 2px solid #FF6A00;
       transition: all 0.3s ease;
       margin-top: 20px;
-      opacity: 0;
-      animation: fadeIn 2s forwards 2s;
     }
 
     .icon-btn:hover {
@@ -128,8 +109,6 @@
     /* تصميم الأزرار البنفسجي أسفل الإعلان */
     .buttons-container {
       margin-top: 30px;
-      opacity: 0;
-      animation: fadeIn 2s forwards 2.5s;
     }
 
     .purple-btn {
@@ -168,11 +147,11 @@
       قريباً تطبيق شهادات مجانية للآيفون
     </div>
 
-    <!-- أزرار البنفسجي أسفل الإعلان -->
+    <!-- أزرار البنفسجي أسفل الإعلان مع الروابط -->
     <div class="buttons-container">
-      <a href="https://t.me/MRMods_Official" class="purple-btn">Telegram</a>
-      <a href="https://youtube.com/@mrmods-official?si=yerMnGfEtwMpasNW" class="purple-btn">Youtube</a>
-      <a href="https://mrmods-repo.netlify.app/" class="purple-btn">MyRepositorie</a>
+      <a href="https://www.example.com/1" class="purple-btn" target="_blank">زر 1</a> <!-- الرابط الأول -->
+      <a href="https://www.example.com/2" class="purple-btn" target="_blank">زر 2</a> <!-- الرابط الثاني -->
+      <a href="https://www.example.com/3" class="purple-btn" target="_blank">زر 3</a> <!-- الرابط الثالث -->
     </div>
   </div>
 </body>
