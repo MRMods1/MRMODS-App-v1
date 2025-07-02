@@ -107,7 +107,7 @@
       transition: all 0.3s ease;
       margin-top: 20px;
       animation: pulse 1.5s infinite;
-      text-decoration: none; /* إزالة الخط أسفل الرابط */
+      text-decoration: none;
     }
 
     @keyframes pulse {
@@ -129,26 +129,57 @@
       margin-top: 30px;
     }
 
+    /* تطبيق تأثير Liquid Glass على الأزرار */
     .purple-btn {
       display: inline-block;
-      background-color: #800080;
+      background: rgba(255, 255, 255, 0.1);  /* شفافية مع خلفية خفيفة */
       color: white;
       font-size: 18px;
       padding: 14px 30px;
       border-radius: 30px;
-      border: none;
+      border: 2px solid rgba(255, 255, 255, 0.3);  /* حدود خفيفة شفافة */
       text-decoration: none;
       margin: 10px;
-      transition: background-color 0.3s ease, transform 0.3s ease;
+      backdrop-filter: blur(8px);  /* تأثير طمس للخلفية */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);  /* ظل خفيف */
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .purple-btn::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 300%;
+      height: 300%;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      animation: liquidEffect 1s infinite;
+    }
+
+    @keyframes liquidEffect {
+      0% {
+        transform: translate(-50%, -50%) scale(0);
+      }
+      50% {
+        transform: translate(-50%, -50%) scale(1.2);
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(0);
+      }
     }
 
     .purple-btn:hover {
-      background-color: #6A006A;
-      transform: translateY(-3px);
+      background: rgba(255, 255, 255, 0.2);  /* عند التمرير يتم زيادة الشفافية */
+      border-color: rgba(255, 255, 255, 0.6); /* زيادة الشفافية عند التمرير */
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);  /* ظل أقوى */
     }
 
     .purple-btn:active {
-      transform: scale(0.95);
+      transform: scale(0.98);
     }
 
     @media (max-width: 768px) {
