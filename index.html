@@ -43,37 +43,49 @@
       font-family: 'Roboto', sans-serif;
       margin: 0;
       padding: 0;
-      background: url('https://server.wallpaperalchemy.com/storage/wallpapers/50/majestic-lighthouse-on-icy-cliff-4k-wallpaper.jpg') no-repeat center center fixed; /* إضافة صورة الخلفية الجديدة */
-      background-size: cover; /* تكبير الصورة لتغطية كامل الخلفية */
+      background: url('https://server.wallpaperalchemy.com/storage/wallpapers/50/majestic-lighthouse-on-icy-cliff-4k-wallpaper.jpg') no-repeat center center fixed;
+      background-size: cover;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      color: white; /* نص أبيض */
+      color: white;
+      animation: fadeIn 2s ease-in-out; /* إضافة انميشن لظهور الصفحة */
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
     }
 
     .container {
       text-align: center;
-      background: rgba(255, 255, 255, 0.1); /* خلفية شفافة مع بعض اللون الأبيض */
+      background: rgba(255, 255, 255, 0.1);
       padding: 40px;
       border-radius: 12px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
       max-width: 600px;
       width: 100%;
-      backdrop-filter: blur(10px); /* تطبيق تأثير الضبابية (ليكود جلاس) */
-      border: 2px solid rgba(255, 255, 255, 0.2); /* إضافة إطار شفاف مع تأثير الضوء */
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      animation: slideUp 1s ease-out; /* انميشن لظهور المحتوى */
+    }
+
+    @keyframes slideUp {
+      0% { transform: translateY(50px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
     }
 
     h1 {
       font-size: 36px;
       color: white;
+      animation: bounceIn 1s ease; /* انميشن لعنوان التطبيق */
     }
 
-    .announcement {
-      font-size: 18px;
-      color: #FF6A00;
-      font-weight: bold;
-      margin-bottom: 20px;
+    @keyframes bounceIn {
+      0% { transform: scale(0.5); opacity: 0; }
+      50% { transform: scale(1.1); opacity: 1; }
+      100% { transform: scale(1); }
     }
 
     .app-title {
@@ -83,23 +95,29 @@
       margin-bottom: 20px;
     }
 
-    /* زر "قريباً تطبيق شهادات مجانية للآيفون" مع الخلفية الشفافة */
     .icon-btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      background-color: transparent; /* جعل الزر شفاف */
+      background-color: transparent;
       color: white;
       font-size: 18px;
       padding: 12px 24px;
       border-radius: 30px;
-      border: 2px solid #FF6A00; /* حدود برتقالية خفيفة */
+      border: 2px solid #FF6A00;
       transition: all 0.3s ease;
       margin-top: 20px;
+      animation: pulse 1.5s infinite; /* انميشن لزر قريبًا */
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.8; }
+      100% { transform: scale(1); opacity: 1; }
     }
 
     .icon-btn:hover {
-      background-color: rgba(255, 106, 0, 0.2); /* خلفية خفيفة عند المرور */
+      background-color: rgba(255, 106, 0, 0.2);
       cursor: pointer;
     }
 
@@ -107,14 +125,13 @@
       margin-right: 10px;
     }
 
-    /* تصميم الأزرار البنفسجي أسفل الإعلان */
     .buttons-container {
       margin-top: 30px;
     }
 
     .purple-btn {
       display: inline-block;
-      background-color: #800080; /* اللون البنفسجي */
+      background-color: #800080;
       color: white;
       font-size: 18px;
       padding: 14px 30px;
@@ -123,14 +140,14 @@
       text-decoration: none;
       margin: 10px;
       transition: background-color 0.3s ease, transform 0.3s ease;
+      animation: fadeIn 2s ease-in-out; /* انميشن للأزرار البنفسجية */
     }
 
     .purple-btn:hover {
-      background-color: #6A006A; /* اللون البنفسجي الغامق عند المرور */
+      background-color: #6A006A;
       transform: translateY(-3px);
     }
 
-    /* تأثير حركة عند الضغط على الزر */
     .purple-btn:active {
       transform: scale(0.95);
     }
@@ -139,20 +156,18 @@
 
 <body>
   <div class="container">
-    <!-- عنوان التطبيق في الأعلى -->
     <div class="app-title">MRMODS App v1</div>
     
-    <!-- إعلان مع أيقونة داخل إطار زر -->
+    <!-- زر مع أنيميشن -->
     <div class="icon-btn">
-      <i class="fas fa-certificate"></i> <!-- أيقونة الشهادات -->
+      <i class="fas fa-certificate"></i>
       قريباً تطبيق شهادات مجانية للآيفون
     </div>
 
-    <!-- أزرار البنفسجي أسفل الإعلان مع الروابط -->
     <div class="buttons-container">
-      <a href="https://www.example.com/1" class="purple-btn" target="_blank">زر 1</a> <!-- الرابط الأول -->
-      <a href="https://www.example.com/2" class="purple-btn" target="_blank">زر 2</a> <!-- الرابط الثاني -->
-      <a href="https://www.example.com/3" class="purple-btn" target="_blank">زر 3</a> <!-- الرابط الثالث -->
+      <a href="https://www.example.com/1" class="purple-btn" target="_blank">زر 1</a>
+      <a href="https://www.example.com/2" class="purple-btn" target="_blank">زر 2</a>
+      <a href="https://www.example.com/3" class="purple-btn" target="_blank">زر 3</a>
     </div>
   </div>
 </body>
