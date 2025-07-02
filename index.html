@@ -50,7 +50,7 @@
       align-items: center;
       height: 100vh;
       color: white;
-      animation: fadeIn 2s ease-in-out; /* إضافة انميشن لظهور الصفحة */
+      animation: fadeIn 2s ease-in-out;
     }
 
     @keyframes fadeIn {
@@ -65,9 +65,9 @@
       border-radius: 12px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
       max-width: 600px;
-      width: 90%; /* تغيير العرض ليكون متغير */
+      width: 90%;
       border: 2px solid rgba(255, 255, 255, 0.2);
-      animation: slideUp 1s ease-out; /* انميشن لظهور المحتوى */
+      animation: slideUp 1s ease-out;
     }
 
     @keyframes slideUp {
@@ -78,7 +78,7 @@
     h1 {
       font-size: 36px;
       color: white;
-      animation: bounceIn 1s ease; /* انميشن لعنوان التطبيق */
+      animation: bounceIn 1s ease;
     }
 
     @keyframes bounceIn {
@@ -106,7 +106,7 @@
       border: 2px solid #FF6A00;
       transition: all 0.3s ease;
       margin-top: 20px;
-      animation: pulse 1.5s infinite; /* انميشن لزر قريبًا */
+      animation: pulse 1.5s infinite;
     }
 
     @keyframes pulse {
@@ -139,7 +139,6 @@
       text-decoration: none;
       margin: 10px;
       transition: background-color 0.3s ease, transform 0.3s ease;
-      animation: fadeIn 2s ease-in-out; /* انميشن للأزرار البنفسجية */
     }
 
     .purple-btn:hover {
@@ -151,7 +150,6 @@
       transform: scale(0.95);
     }
 
-    /* Media Queries لتحسين التصميم على الأجهزة المختلفة */
     @media (max-width: 768px) {
       .container {
         width: 80%;
@@ -196,11 +194,11 @@
   <div class="container">
     <div class="app-title">MRMODS App v1</div>
     
-    <!-- زر مع أنيميشن -->
-    <div class="icon-btn">
+    <!-- زر مع رابط -->
+    <a href="https://www.example.com" class="icon-btn" target="_blank">
       <i class="fas fa-certificate"></i>
       قريباً تطبيق شهادات مجانية للآيفون
-    </div>
+    </a>
 
     <div class="buttons-container">
       <a href="https://t.me/MRMods_Official" class="purple-btn" target="_blank">قناة التيليجرام</a>
