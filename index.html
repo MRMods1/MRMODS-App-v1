@@ -31,6 +31,9 @@
 
   <!-- الخطوط -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- إضافة أيقونات FontAwesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
   <style>
     body {
@@ -101,6 +104,31 @@
       font-weight: bold;
       margin-bottom: 20px;
     }
+
+    /* إضافة إطار زر حول الأيقونة والنص */
+    .icon-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #FF6A00;
+      color: white;
+      font-size: 18px;
+      padding: 12px 24px;
+      border-radius: 30px;
+      border: 2px solid #FF6A00;
+      transition: all 0.3s ease;
+      margin-top: 20px;
+    }
+
+    .icon-btn:hover {
+      background-color: #D85A00;
+      border-color: #D85A00;
+      cursor: pointer;
+    }
+
+    .icon-btn i {
+      margin-right: 10px;
+    }
   </style>
 </head>
 
@@ -109,8 +137,11 @@
     <!-- عنوان التطبيق في الأعلى -->
     <div class="app-title">MRMODS App v1</div>
     
-    <!-- إعلان -->
-    <div class="announcement">قريباً تطبيق شهادات مجانية للآيفون</div>
+    <!-- إعلان مع أيقونة داخل إطار زر -->
+    <div class="icon-btn">
+      <i class="fas fa-certificate"></i> <!-- أيقونة الشهادات -->
+      قريباً تطبيق شهادات مجانية للآيفون
+    </div>
 
     <p>نحن سعداء بتقديم تجربة تفاعلية رائعة لك!</p>
     <a href="#" class="cta-btn">ابدأ الآن</a>
