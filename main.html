@@ -16,11 +16,18 @@
     "theme_color": "#2F3BA2",
     "icons": [
       {
-        "src": "https://cdn4.cdn-telegram.org/file/WPXRkyFdcvM5hfu21Wa5KwzYv1FtqXW8be8_WnhrdqNHTDE2qqbKQOYUmpljZgOgdBOeA77gcOz8u7Wg5N38NY01N3x3UUNyQ3DqOSEf71qLscTEL4XTwSwkmi93w__8w3RVDrkRPdj5jOKP5_2dbNgOLL0VDIH_ZEcNLh2SRegiCeyNuw7th83OUXd_bZ1AFos_fSXKKAmwl9w4Ugf-PfrDvoCPkGixpU7tO68o5oNNPotet8I6WZ234_kBQRYtxZOqL5iVwUFLK-DEun1jwJyZCFZwvL6U6pQbvLBhL_tymJ0hlPf94gBXkaFSgiD8TUEf6v1yUmImWi0FB1xxeA.jpg" type="image/jpeg">
+        "src": "https://cdn4.cdn-telegram.org/file/WPXRkyFdcvM5hfu21Wa5KwzYv1FtqXW8be8_WnhrdqNHTDE2qqbKQOYUmpljZgOgdBOeA77gcOz8u7Wg5N38NY01N3x3UUNyQ3DqOSEf71qLscTEL4XTwSwkmi93w__8w3RVDrkRPdj5jOKP5_2dbNgOLL0VDIH_ZEcNLh2SRegiCeyNuw7th83OUXd_bZ1AFos_fSXKKAmwl9w4Ugf-PfrDvoCPkGixpU7tO68o5oNNPotet8I6WZ234_kBQRYtxZOqL5iVwUFLK-DEun1jwJyZCFZwvL6U6pQbvLBhL_tymJ0hlPf94gBXkaFSgiD8TUEf6v1yUmImWi0FB1xxeA.jpg",
+        "sizes": "192x192",
+        "type": "image/jpg"
+      },
+      {
+        "src": "https://cdn4.cdn-telegram.org/file/WPXRkyFdcvM5hfu21Wa5KwzYv1FtqXW8be8_WnhrdqNHTDE2qqbKQOYUmpljZgOgdBOeA77gcOz8u7Wg5N38NY01N3x3UUNyQ3DqOSEf71qLscTEL4XTwSwkmi93w__8w3RVDrkRPdj5jOKP5_2dbNgOLL0VDIH_ZEcNLh2SRegiCeyNuw7th83OUXd_bZ1AFos_fSXKKAmwl9w4Ugf-PfrDvoCPkGixpU7tO68o5oNNPotet8I6WZ234_kBQRYtxZOqL5iVwUFLK-DEun1jwJyZCFZwvL6U6pQbvLBhL_tymJ0hlPf94gBXkaFSgiD8TUEf6v1yUmImWi0FB1xxeA.jpg",
+        "sizes": "512x512",
+        "type": "image/jpg"
       }
     ]
   }">
-  
+
   <meta name="theme-color" content="#2F3BA2">
 
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -139,7 +146,6 @@
       transform: scale(0.95);
     }
 
-    /* عرض السكربت داخل عنصر pre مع اللون الأسود والنص الغامق */
     .script-container {
       margin-top: 20px;
       background-color: rgba(255, 255, 255, 0.2);
@@ -149,8 +155,8 @@
       max-height: 300px;
       overflow-y: auto;
       font-family: monospace;
-      color: #000000; /* لون الخط الأسود */
-      font-weight: bold; /* جعل النص غامقًا */
+      color: #000000; /* اللون الأسود */
+      font-weight: bold; /* النص غامق */
     }
 
     .download-btn {
@@ -173,6 +179,44 @@
 
     .download-btn:active {
       transform: scale(0.95);
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        width: 80%;
+        padding: 30px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      .app-title {
+        font-size: 1.5rem;
+      }
+
+      .purple-btn {
+        padding: 12px 25px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        width: 90%;
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      .app-title {
+        font-size: 1.2rem;
+      }
+
+      .purple-btn {
+        padding: 10px 20px;
+      }
     }
   </style>
 </head>
@@ -204,6 +248,5 @@ NREH ESTATE INFORMATION TECHNOLOGY CO.,LTD.
       <a href="https://sign.applep12.com/Install/68644b0a-055c-e901-003f-51fb201a44f2" class="download-btn" download>
       تثبيت ايساين مباشر
     </a>
-  </div>
 </body>
 </html>
