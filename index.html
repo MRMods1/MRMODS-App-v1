@@ -49,6 +49,18 @@
       align-items: center;
       height: 100vh;
       color: white; /* نص أبيض */
+      opacity: 0;
+      animation: fadeIn 2s forwards;
+    }
+
+    /* تأثير التلاشي للنص عند التحميل */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
     }
 
     .container {
@@ -64,6 +76,8 @@
     h1 {
       font-size: 36px;
       color: white; /* نص أبيض */
+      opacity: 0;
+      animation: fadeIn 2s forwards 0.5s;
     }
 
     .announcement {
@@ -71,6 +85,8 @@
       color: #FF6A00;
       font-weight: bold;
       margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeIn 2s forwards 1s;
     }
 
     .app-title {
@@ -78,6 +94,8 @@
       color: white;
       font-weight: bold;
       margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeIn 2s forwards 1.5s;
     }
 
     /* إضافة إطار زر حول الأيقونة والنص */
@@ -93,6 +111,8 @@
       border: 2px solid #FF6A00;
       transition: all 0.3s ease;
       margin-top: 20px;
+      opacity: 0;
+      animation: fadeIn 2s forwards 2s;
     }
 
     .icon-btn:hover {
@@ -105,9 +125,11 @@
       margin-right: 10px;
     }
 
-    /* تصميم الأزرار البنفسجية أسفل الإعلان */
+    /* تصميم الأزرار البنفسجي أسفل الإعلان */
     .buttons-container {
       margin-top: 30px;
+      opacity: 0;
+      animation: fadeIn 2s forwards 2.5s;
     }
 
     .purple-btn {
@@ -126,6 +148,11 @@
     .purple-btn:hover {
       background-color: #6A006A; /* اللون البنفسجي الغامق عند المرور */
       transform: translateY(-3px);
+    }
+
+    /* تأثير حركة عند الضغط على الزر */
+    .purple-btn:active {
+      transform: scale(0.95);
     }
   </style>
 </head>
@@ -148,33 +175,5 @@
       <a href="#" class="purple-btn">زر 3</a>
     </div>
   </div>
-
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/index.html', { scope: './' })
-          .then(reg => console.log('✅ Service Worker مسجل:', reg))
-          .catch(err => console.log('❌ فشل التسجيل:', err));
-      });
-    }
-
-    const swCode = `
-      self.addEventListener('install', function(event) {
-        console.log('[Service Worker] تثبيت');
-        event.waitUntil(
-          caches.open('pwa-cache').then(function(cache) {
-            return cache.addAll([
-              '/index.html',
-              '/favicon.ico',
-              '/assets/icons/icon-192.png',
-              '/assets/icons/icon-512.png'
-            ]);
-          })
-        );
-      });
-
-      self.addEventListener('activate', function(event) {
-        console.log('[Service Worker] تفعيل');
-      });
-
-      self.addEventListener
+</body>
+</html>
