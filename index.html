@@ -65,8 +65,8 @@
       border-radius: 12px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
       max-width: 600px;
-      width: 100%;
-      border: 2px solid rgba(255, 255, 255, 0.2); /* إزالة خاصية blur */
+      width: 90%; /* تغيير العرض ليكون متغير */
+      border: 2px solid rgba(255, 255, 255, 0.2);
       animation: slideUp 1s ease-out; /* انميشن لظهور المحتوى */
     }
 
@@ -88,7 +88,7 @@
     }
 
     .app-title {
-      font-size: 36px;
+      font-size: 2rem;
       color: white;
       font-weight: bold;
       margin-bottom: 20px;
@@ -149,6 +149,45 @@
 
     .purple-btn:active {
       transform: scale(0.95);
+    }
+
+    /* Media Queries لتحسين التصميم على الأجهزة المختلفة */
+    @media (max-width: 768px) {
+      .container {
+        width: 80%;
+        padding: 30px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      .app-title {
+        font-size: 1.5rem;
+      }
+
+      .purple-btn {
+        padding: 12px 25px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        width: 90%;
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      .app-title {
+        font-size: 1.2rem;
+      }
+
+      .purple-btn {
+        padding: 10px 20px;
+      }
     }
   </style>
 </head>
